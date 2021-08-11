@@ -1,0 +1,6 @@
+.debug/
+.utils/
+.vscode/
+dist/
+node_modules/
+utils/
