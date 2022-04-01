@@ -1,11 +1,12 @@
 {
-  "name": "node-red-contrib-changeme",
+  "name": "node-red-contrib-intexspa",
   "version": "0.0.0",
-  "description": "changeme nodes for Node-RED.",
+  "description": "Intex SPA nodes for Node-RED.",
   "keywords": [
     "node-red",
     "node-red-contrib",
-    "changeme"
+    "intexspa",
+    "hottub"
   ],
   "scripts": {
     "add-node": "node ./.utils/template/add-node.js",
@@ -34,12 +35,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/claudiospizzi/node-red-contrib-changeme.git"
+    "url": "git+https://github.com/claudiospizzi/node-red-contrib-intexspa.git"
   },
   "bugs": {
-    "url": "https://github.com/claudiospizzi/node-red-contrib-changeme/issues"
+    "url": "https://github.com/claudiospizzi/node-red-contrib-intexspa/issues"
   },
-  "homepage": "https://github.com/claudiospizzi/node-red-contrib-changeme#readme",
+  "homepage": "https://github.com/claudiospizzi/node-red-contrib-intexspa#readme",
   "node-red": {
     "nodes": {
       "intexspa-config": "./dist/nodes/intexspa-config/intexspa-config.js",
