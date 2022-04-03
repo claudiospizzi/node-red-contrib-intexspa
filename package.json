@@ -29,8 +29,7 @@
     "postversion": "npm-run-all postversion:push postversion:pushtag",
     "postversion:push": "git push",
     "postversion:pushtag": "git push --tags",
-    "prepare": "npm-run-all build",
-    "prepublishOnly": "npm-run-all lint"
+    "prepublishOnly": "npm-run-all build lint"
   },
   "author": "Claudio Spizzi",
   "license": "MIT",
