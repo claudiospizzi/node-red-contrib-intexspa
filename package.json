@@ -51,6 +51,9 @@
       "intexspa-status": "./dist/nodes/intexspa-status/intexspa-status.js"
     }
   },
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.1",
     "@types/node-red": "^1.2.1",
