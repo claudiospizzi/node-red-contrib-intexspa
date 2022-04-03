@@ -5,7 +5,7 @@ declare const RED: EditorRED;
 
 RED.nodes.registerType<IntexSpaStatusEditorNodeProperties>('intexspa-status', {
   category: 'function',
-  color: '#a6bbcf',
+  color: '#499ccc',
   defaults: {
     name: {
       value: '',
@@ -23,7 +23,7 @@ RED.nodes.registerType<IntexSpaStatusEditorNodeProperties>('intexspa-status', {
   inputs: 1,
   outputs: 1,
   icon: 'status.png',
-  paletteLabel: 'status',
+  paletteLabel: 'intexspa status',
   label: function () {
     return this.name || 'intexspa status';
   },

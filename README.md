@@ -15,8 +15,10 @@ This contrib module provides a simple node to get the current status of a hot tu
 
 Node to get the current state of an Intex SPA hot tub.
 
-![mystrom switch status](.assets/mystrom-switch-status.png)
+![intexspa status](.assets/intexspa-status.png)
 
 ## Constraint
 
 This module is not associated with the Intex Recreation Corp.
+
+Icons created by [Radhe Icon - Flaticon](https://www.flaticon.com/free-icons/ui).
