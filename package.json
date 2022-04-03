@@ -41,7 +41,11 @@
     "url": "https://github.com/claudiospizzi/node-red-contrib-intexspa/issues"
   },
   "homepage": "https://github.com/claudiospizzi/node-red-contrib-intexspa#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "node-red": {
+    "version": ">=2.0.0",
     "nodes": {
       "intexspa-config": "./dist/nodes/intexspa-config/intexspa-config.js",
       "intexspa-status": "./dist/nodes/intexspa-status/intexspa-status.js"
