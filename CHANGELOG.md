@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 - Fixed: Add missing example
+- Fixed: Add Node.RED and Node.js version
 
 ## 1.0.1
 
