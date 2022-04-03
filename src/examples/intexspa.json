@@ -1,0 +1,78 @@
+[
+    {
+        "id": "4c15463924c78d8c",
+        "type": "tab",
+        "label": "intexspa",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f57310fb65c42db7",
+        "type": "inject",
+        "z": "4c15463924c78d8c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "8b3f54d4721bbf43"
+            ]
+        ]
+    },
+    {
+        "id": "8b3f54d4721bbf43",
+        "type": "intexspa-status",
+        "z": "4c15463924c78d8c",
+        "name": "",
+        "account": "dc9bd620cb66f1d2",
+        "device": "spa",
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "9dde9928dd7ab189"
+            ]
+        ]
+    },
+    {
+        "id": "9dde9928dd7ab189",
+        "type": "debug",
+        "z": "4c15463924c78d8c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "dc9bd620cb66f1d2",
+        "type": "intexspa-config",
+        "name": "user@example.com",
+        "username": "user@example.com",
+        "password": "1234"
+    }
+]
