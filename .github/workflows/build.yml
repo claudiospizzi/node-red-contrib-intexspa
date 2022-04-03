@@ -14,14 +14,17 @@ jobs:
           cache-name: ${{ github.repository.name }}
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ github.repository.name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-${{ github.repository.name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build
-        run: npm build
+      - name: Run Build
+        run: npm run build
+
+      - name: Run Lint
+        run: npm run lint
