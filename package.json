@@ -10,11 +10,12 @@
   ],
   "scripts": {
     "add-node": "node ./.utils/template/add-node.js",
-    "build": "npm-run-all build:purge build:copy build:bundle build:compile",
+    "build": "npm-run-all build:purge build:copy build:bundle build:compile build:example",
     "build:purge": "del-cli --force dist",
     "build:copy": "copyfiles -u 2 \"./src/nodes/**/*.{png,svg}\" \"./dist/nodes/\"",
     "build:bundle": "rollup -c ./.utils/bundle/rollup.config.editor.js",
     "build:compile": "tsc",
+    "build:example": "copyfiles -u 2 \"./src/examples/*.json\" \"./dist/examples/\"",
     "lint": "npm-run-all lint:prettier lint:eslint",
     "lint:prettier": "prettier --ignore-path .eslintignore --check \"**/*.{js,ts,md}\"",
     "lint:eslint": "eslint --ext .js,.ts .",
