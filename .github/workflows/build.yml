@@ -10,11 +10,9 @@ jobs:
 
       - name: Cache node modules
         uses: actions/cache@v3
-        env:
-          cache-name: ${{ github.repository }}
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ github.repository }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ github.repository }}-
             ${{ runner.os }}-build-
