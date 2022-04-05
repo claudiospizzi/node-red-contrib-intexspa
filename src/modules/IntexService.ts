@@ -134,7 +134,7 @@ export class IntexService {
     const url = `${this.baseUrl}/v1/device/lateststatus/${device.deviceId}`;
 
     const result = await axios.get<IntexDeviceStatus>(url, this.tokenRequestConfig);
-    result.data.detail = new IntexDeviceStatusDetail(result.data.data);
+    result.data.detail = new IntexDeviceStatusDetail(result.data.sid, result.data.data);
     return result.data;
   }
 
@@ -168,4 +168,17 @@ export class IntexService {
     const result = await axios.get<IntexDeviceCommandDefinition[]>(url, this.tokenRequestConfig);
     return result.data;
   }
+
+  // private async invokeDeviceCommand(device: IntexDevice, command: IntexDeviceCommandDefinition, data: boolean | number | undefined) : Promise<void> {
+  //   await this.authenticate();
+
+  //   const url = `${this.baseUrl}/v1/userdevice/user/operate/${device.deviceId}/?command=`;
+  // }
+
+  // async setDeviceFilter(device: IntexDevice, state: boolean) : Promise<void> {
+  //   const command = await this.getDeviceCommand(device, 'FilterOnOff');
+  //   await this.invokeDeviceCommand(device, command, state);
+  // }
 }
+
+// 'PowerOnOff' | 'FilterOnOff' | 'JetOnOff' | 'SanitizerOnOff' | 'BubbleOnOff' | 'Refresh' | 'TempSet'

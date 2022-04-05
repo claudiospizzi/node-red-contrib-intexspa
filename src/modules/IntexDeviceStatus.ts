@@ -13,7 +13,7 @@ export class IntexDeviceStatus {
 
   public get detail(): IntexDeviceStatusDetail {
     if (this._detail === undefined) {
-      this._detail = new IntexDeviceStatusDetail(this.data);
+      this._detail = new IntexDeviceStatusDetail(this.sid, this.data);
     }
     return this._detail;
   }

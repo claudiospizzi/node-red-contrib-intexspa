@@ -3,6 +3,7 @@
  */
 export class IntexDeviceStatusDetail {
   error: string | undefined;
+  timestamp: Date | undefined;
   current_temperature: number | undefined;
   target_temperature: number | undefined;
   is_filter_running: boolean | undefined;
@@ -15,8 +16,15 @@ export class IntexDeviceStatusDetail {
   is_heat_online: boolean | undefined;
   is_sanitizer_online: boolean | undefined;
 
-  constructor(data: string | undefined) {
+  constructor(sid: string | undefined, data: string | undefined) {
+    this.parseTimestamp(sid);
     this.parseData(data);
+  }
+
+  private parseTimestamp(sid: string | undefined) {
+    if (sid !== undefined && !isNaN(+sid)) {
+      this.timestamp = new Date(+sid);
+    }
   }
 
   private parseData(data: string | undefined): void {
