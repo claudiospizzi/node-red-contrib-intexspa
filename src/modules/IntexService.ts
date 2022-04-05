@@ -139,6 +139,23 @@ export class IntexService {
   }
 
   /**
+   * Get a single command by name. Possible value commands are: PowerOnOff,
+   * FilterOnOff, JetOnOff, SanitizerOnOff, BubbleOnOff, Refresh and TempSet.
+   * @param device The device to query.
+   * @param commandName The command name.
+   * @returns The command definition or an exception if not found.
+   */
+  async getDeviceCommand(device: IntexDevice, commandName: string): Promise<IntexDeviceCommandDefinition> {
+    const commands = await this.getDeviceCommandSet(device);
+    for (const command of commands) {
+      if (command.commandName === commandName) {
+        return command;
+      }
+    }
+    throw `Command ${commandName} not found!`;
+  }
+
+  /**
    * Get the available commands for a specific device.
    * @param device The device to query.
    * @returns List of available commands.
