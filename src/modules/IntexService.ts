@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { IntexDevice } from './IntexDevice';
 import { IntexDeviceCloudStatus } from './IntexDeviceCloudStatus';
+import { IntexDeviceCommandDefinition } from './IntexDeviceCommandDefinition';
 import { IntexDeviceStatus } from './IntexDeviceStatus';
 import { IntexDeviceStatusDetail } from './IntexDeviceStatusData';
 import { IntexUser } from './IntexUser';
@@ -134,6 +135,20 @@ export class IntexService {
 
     const result = await axios.get<IntexDeviceStatus>(url, this.tokenRequestConfig);
     result.data.detail = new IntexDeviceStatusDetail(result.data.data);
+    return result.data;
+  }
+
+  /**
+   * Get the available commands for a specific device.
+   * @param device The device to query.
+   * @returns List of available commands.
+   */
+  async getDeviceCommandSet(device: IntexDevice): Promise<IntexDeviceCommandDefinition[]> {
+    await this.authenticate();
+
+    const url = `${this.baseUrl}/v1/commandset/device/${device.deviceId}`;
+
+    const result = await axios.get<IntexDeviceCommandDefinition[]>(url, this.tokenRequestConfig);
     return result.data;
   }
 }
