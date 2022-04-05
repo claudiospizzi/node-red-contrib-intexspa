@@ -133,7 +133,7 @@ export class IntexService {
     const url = `${this.baseUrl}/v1/device/lateststatus/${device.deviceId}`;
 
     const result = await axios.get<IntexDeviceStatus>(url, this.tokenRequestConfig);
-    result.data.detail = new IntexDeviceStatusDetail(result.data.data); // ToDo: Parse data
+    result.data.detail = new IntexDeviceStatusDetail(result.data.data);
     return result.data;
   }
 }
