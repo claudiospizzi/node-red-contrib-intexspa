@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is mainly based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+- Added: A new node to perform an action on the device
+- Changed: The config node contains the device definition (BREAKING)
+- Fixed: The status node can now force a status refresh (not only latest)
+
 ## 1.0.2
 
 - Fixed: Add missing example

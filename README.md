@@ -18,8 +18,16 @@ Node to get the current state of an Intex SPA hot tub.
 
 ![intexspa status](.assets/intexspa-status.png)
 
+### intexspa action
+
+Set the state of the Intex SPA hot tub, e.g. start and stop heating.
+
+![intexspa action](.assets/intexspa-action.png)
+
 ## Constraint
 
 This module is not associated with the Intex Recreation Corp.
+
+This software is provided "as is", without any guarantees on the function and operation of the Intex devices. You use it at your own risk. For more details, check the license terms.
 
 Icons created by [Radhe Icon - Flaticon](https://www.flaticon.com/free-icons/ui).

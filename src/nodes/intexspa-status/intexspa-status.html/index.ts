@@ -10,12 +10,12 @@ RED.nodes.registerType<IntexSpaStatusEditorNodeProperties>('intexspa-status', {
     name: {
       value: '',
     },
-    account: {
+    device: {
       value: '',
       type: 'intexspa-config',
       required: true,
     },
-    device: {
+    refresh: {
       value: '',
       required: true,
     },
@@ -26,5 +26,15 @@ RED.nodes.registerType<IntexSpaStatusEditorNodeProperties>('intexspa-status', {
   paletteLabel: 'intexspa status',
   label: function () {
     return this.name || 'intexspa status';
+  },
+  oneditprepare: function () {
+    $('#node-input-refresh').typedInput({
+      types: [
+        {
+          value: 'refresh',
+          options: ['Yes', 'No'],
+        },
+      ],
+    });
   },
 });

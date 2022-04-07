@@ -1,12 +1,12 @@
 import { Node, NodeDef } from 'node-red';
 import { IntexService } from '../../../modules/IntexService';
 import { IntexSpaConfigNode } from '../../intexspa-config/modules/types';
-import { IntexSpaStatusOptions } from '../shared/types';
+import { IntexSpaActionOptions } from '../shared/types';
 
-export interface IntexSpaStatusNodeDef extends NodeDef, IntexSpaStatusOptions {}
+export interface IntexSpaActionNodeDef extends NodeDef, IntexSpaActionOptions {}
 
-export interface IntexSpaStatusNode extends Node {
+export interface IntexSpaActionNode extends Node {
   device: IntexSpaConfigNode;
   service: IntexService;
-  refresh: string;
+  component: string;
 }

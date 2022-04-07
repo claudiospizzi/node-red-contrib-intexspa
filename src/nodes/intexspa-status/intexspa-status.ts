@@ -6,37 +6,36 @@ import { IntexSpaStatusNode, IntexSpaStatusNodeDef } from './modules/types';
 const nodeInit: NodeInitializer = (RED): void => {
   function IntexSpaStatusNodeConstructor(this: IntexSpaStatusNode, config: IntexSpaStatusNodeDef): void {
     RED.nodes.createNode(this, config);
-    this.account = RED.nodes.getNode(config.account) as IntexSpaConfigNode;
-    this.device = config.device;
+    this.device = RED.nodes.getNode(config.device) as IntexSpaConfigNode;
+    this.refresh = config.refresh;
 
-    this.on('input', (msg, send, done) => {
+    // Create the service once per node to reuse the access token.
+    this.service = new IntexService(this.device.username, this.device.password);
+
+    this.on('input', async (msg, send, done) => {
       this.status({ fill: 'blue', shape: 'dot', text: 'running' });
+      try {
+        const device = await this.service.getDeviceByName(this.device.device);
 
-      const intexService = new IntexService(this.account.username, this.account.password);
-      intexService
-        .getDeviceByName(this.device)
-        .then((device) => {
-          intexService
-            .getDeviceStatus(device)
-            .then((deviceStatus) => {
-              this.status({ fill: 'green', shape: 'dot', text: 'successful' });
+        if (this.refresh === 'Yes') {
+          // Now check if the device is online and the status is ok. This call
+          // will perform a refresh on the device itself.
+          const status = await this.service.getDeviceStatusRefresh(device);
+          msg.payload = status.detail;
+        } else {
+          // Just get the latest cloud status of the device without refreshing
+          // the actual status.
+          const status = await this.service.getDeviceStatusLatest(device);
+          msg.payload = status.detail;
+        }
 
-              msg.payload = deviceStatus.detail;
-
-              send(msg);
-              done();
-            })
-            .catch((error) => {
-              this.status({ fill: 'red', shape: 'dot', text: 'failed' });
-
-              done(error);
-            });
-        })
-        .catch((error) => {
-          this.status({ fill: 'red', shape: 'dot', text: 'failed' });
-
-          done(error);
-        });
+        this.status({ fill: 'green', shape: 'dot', text: 'successful' });
+        send(msg);
+        done();
+      } catch (error) {
+        this.status({ fill: 'red', shape: 'dot', text: 'failed' });
+        done(error instanceof Error ? error : new Error(`Unknown: ${error}`));
+      }
     });
   }
 

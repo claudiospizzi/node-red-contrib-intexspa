@@ -6,6 +6,7 @@ const nodeInit: NodeInitializer = (RED): void => {
     RED.nodes.createNode(this, config);
     this.username = config.username;
     this.password = config.password;
+    this.device = config.device;
   }
 
   RED.nodes.registerType('intexspa-config', IntexSpaConfigNodeConstructor);

@@ -18,6 +18,10 @@ RED.nodes.registerType<IntexSpaConfigEditorNodeProperties>('intexspa-config', {
       value: '',
       required: true,
     },
+    device: {
+      value: '',
+      required: true,
+    },
   },
   label: function () {
     return this.name || 'intexspa config';
