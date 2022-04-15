@@ -1,10 +1,10 @@
-name: "Build & Lint"
+name: "CI"
 
 on: push
 
 jobs:
-  ci:
-    name: CI
+  build-lint:
+    name: "Build & Lint"
     runs-on: ubuntu-latest
 
     steps:
