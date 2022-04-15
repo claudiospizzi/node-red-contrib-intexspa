@@ -4,7 +4,7 @@ import { IntexSpaActionEditorNodeProperties } from './modules/types';
 declare const RED: EditorRED;
 
 RED.nodes.registerType<IntexSpaActionEditorNodeProperties>('intexspa-action', {
-  category: 'function',
+  category: 'intex spa',
   color: '#499ccc',
   defaults: {
     name: {

@@ -4,7 +4,7 @@ import { IntexSpaStatusEditorNodeProperties } from './modules/types';
 declare const RED: EditorRED;
 
 RED.nodes.registerType<IntexSpaStatusEditorNodeProperties>('intexspa-status', {
-  category: 'function',
+  category: 'intex spa',
   color: '#499ccc',
   defaults: {
     name: {
