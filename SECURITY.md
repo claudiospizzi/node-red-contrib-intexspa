@@ -13,4 +13,4 @@ Only the latest version is supported.
 
 To report security vulnerabilities in depended modules and libraries, go and check their security policy.
 
-To report a security vulnerability in this repository, ping me on Twitter.
+To report a security vulnerability in this repository, ping me on Twitter [@claudiospizzi](https://twitter.com/claudiospizzi).
