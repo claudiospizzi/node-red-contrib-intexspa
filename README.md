@@ -1,6 +1,6 @@
 [![node-red-contrib](https://img.shields.io/badge/node--red-node--red--contrib--intexspa-aa4444.svg?style=flat-square)](https://flows.nodered.org/node/node-red-contrib-intexspa)
 [![npm](https://img.shields.io/npm/v/node-red-contrib-intexspa.svg?style=flat-square)](https://www.npmjs.com/package/node-red-contrib-intexspa)
-[![build](https://img.shields.io/github/workflow/status/claudiospizzi/node-red-contrib-intexspa/ci?style=flat-square)](https://github.com/claudiospizzi/node-red-contrib-intexspa/actions/workflows/ci.yml)
+[![build](https://img.shields.io/github/workflow/status/claudiospizzi/node-red-contrib-intexspa/CI?style=flat-square)](https://github.com/claudiospizzi/node-red-contrib-intexspa/actions/workflows/ci.yml)
 
 # node-red-contrib-intexspa
 
