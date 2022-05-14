@@ -24,6 +24,15 @@ Set the state of the Intex SPA hot tub, e.g. start and stop heating.
 
 ![intexspa action](.assets/intexspa-action.png)
 
+## Troubleshooting
+
+The following issues can occur, if the Intex SPA account and device are not configured correctly:
+
+| Error                                        | Possible Cause                                                                           |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Request failed with status code 400          | Username or password is wrong.                                                           |
+| Device with device name _MyDevice_ not found | The device name is wrong. Check the device name (aka Product Name in the Intex SPA app). |
+
 ## Constraint
 
 This module is not associated with the Intex Recreation Corp.
